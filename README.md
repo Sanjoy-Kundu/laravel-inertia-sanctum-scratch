@@ -7,10 +7,32 @@
 ## 🗺️ পার্ট ১: সার্ভার-সাইড (Laravel) সেটআপ
 
 ### ধাপ ১.১: Inertia.js সার্ভার প্যাকেজ ইন্সটল
-লারাভেল ব্যাকএন্ডের সাথে ইনার্শিয়ার যোগাযোগের জন্য অফিশিয়াল প্যাকেজটি নামাতে হবে।
+লারাভেল ব্যাকএন্ডের সাথে ইনার্শিয়ার যোগাযোগের জন্য অফিশিয়াল প্যাকেজটি নামাতে হবে।
 * **ডকুমেন্টেশন সোর্স:** [Inertia.js Server-side Installation](https://inertiajs.com/server-side-setup)
 
 * **টার্মিনাল কমান্ড:**
 ```bash
-composer require inertiajs/inertia-laravel# laravel-inertia-sanctum-scratch-26
-# laravel-inertia-sanctum-scratch
+composer require inertiajs/inertia-laravel
+
+
+### 📄   ধাপ ১.২: রুট টেমপ্লেট (`app.blade.php`) তৈরি করা
+ইনার্শিয়া অ্যাপে ব্লেডের মতো প্রতিটা পেজের জন্য আলাদা আলাদা `.blade.php` ফাইল লাগে না। পুরো প্রজেক্টে এই একটা মাত্র ব্লেড ফাইলই থাকবে মেইন কন্টেইনার হিসেবে। বাকি সব পেজ আমরা বানাবো Vue ৩ দিয়ে।
+
+* **আপনার করণীয় (Actions):**
+  1. প্রথমে `resources/views/` ফোল্ডারে যান এবং সেখানে থাকা ডিফল্ট `welcome.blade.php` ফাইলটি **ডিলিট** করে দিন।
+  2. ওই একই ফোল্ডারে `app.blade.php` নামে একটি নতুন খালি ফাইল তৈরি করুন।
+  3. নতুন ফাইলে নিচের অফিশিয়াল কোডটুকু পেস্ট করে সেভ করুন।
+
+* **কোড (Code):**
+```html
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        @vite('resources/js/app.js')
+        <x-inertia::head />
+    </head>
+    <body>
+        <x-inertia::app />
+    </body>
+</html>
