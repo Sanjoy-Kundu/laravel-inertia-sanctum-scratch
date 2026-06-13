@@ -79,3 +79,18 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
+
+
+--------------------------------------------
+
+## 🎨 পার্ট ২: ক্লায়েন্ট-সাইড (Vue 3 & Vite) সেটআপ
+
+ডকুমেন্টেশনের গাইডলাইন অনুযায়ী ফ্রন্টএন্ড সেটআপকে দুটি ভাগে ভাগ করা হয়েছে: Prerequisites (পূর্বশর্ত) এবং Installation (ইন্সটলেশন)।
+
+### 🎯 ধাপ ২.১: Prerequisites (পূর্বশর্ত প্যাকেজ)
+Inertia-র জন্য প্রথমে আমাদের ক্লায়েন্ট-সাইড ফ্রেমওয়ার্ক (Vue) এবং তার করিসপন্ডিং Vite প্লাগইন ইন্সটল করতে হবে।
+* **ডকুমেন্টেশন সোর্স:** [Inertia.js Prerequisites](https://inertiajs.com/client-side-setup)
+
+* **টার্মিনাল কমান্ড:**
+```bash
+npm install vue @vitejs/plugin-vue
