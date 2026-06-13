@@ -164,3 +164,25 @@ export default defineConfig({
         },
     },
 });
+
+
+
+
+
+-------------------------------------------------
+### 🚀 পরবর্তী মিশন: Initialize the Inertia app
+
+যেহেতু আমাদের কনফিগারেশন এবং প্যাকেজ ইন্সটলেশন শেষ, এবার আমাদের ফ্রন্টএন্ডের মূল মস্তিস্ক বা বুটস্ট্র্যাপ ফাইল তৈরি করার পালা। 
+
+ডকুমেন্টেশনের পরবর্তী ধাপ হলো **`resources/js/app.js`** ফাইলটি সেটআপ করা।
+
+### 🧠  ধাপ ২.৪: ফ্রন্টএন্ড বুটস্ট্র্যাপ ফাইল (`resources/js/app.js`)
+Inertia v2.0+ এর অফিশিয়াল গাইডলাইন অনুযায়ী একদম মিনিমাল এন্ট্রি পয়েন্ট ব্যবহার করে ফ্রন্টএন্ড অ্যাপ ইনিশিয়ালাইজ করা হয়েছে। আমাদের `vite.config.js` ফাইলের `@inertiajs/vite` প্লাগইনটি ব্যাকগ্রাউন্ডে অটোমেটিক পেজ রেজোলিউশন এবং মাউন্টিং হ্যান্ডেল করে।
+
+* **আপনার করণীয় (Actions):** `resources/js/app.js` ফাইলে নিচের কোডটি লিখে সেভ করুন।
+* **ডকুমেন্টেশন সোর্স:** [Inertia.js SInitialize the Inertia app](https://inertiajs.com/docs/v3/installation/client-side-setup)
+* **কোড (Code):**
+```javascript
+import { createInertiaApp } from '@inertiajs/vue3'
+
+createInertiaApp()
