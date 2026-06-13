@@ -124,3 +124,43 @@ export default defineConfig({
         watch: { ignored: ['**/storage/framework/views/**'] },
     },
 });
+
+
+
+
+
+------------------------------------------------
+### ⚙️  ধাপ ২.二: Vite কনফিগারেশন (`vite.config.js`)
+لারাভেল ১৩-এর ডিফল্ট কনফিগারেশন (Tailwind ও Bunny Fonts) ঠিক রেখে ইনার্শিয়ার Vue প্লাগইন এবং অফিশিয়াল `inertia()` প্লাগইন সুন্দরভাবে মার্জ (Merge) করা হয়েছে।
+
+* **ফাইল পাথ:** `vite.config.js`
+* **কোড (Code):**
+```javascript
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import { bunny } from 'laravel-vite-plugin/fonts';
+import tailwindcss from '@tailwindcss/vite';
+import vue from '@vitejs/plugin-vue'; //new
+import inertia from '@inertiajs/vite' //mew
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
+            fonts: [
+                bunny('Instrument Sans', {
+                    weights: [400, 500, 600],
+                }),
+            ],
+        }),
+        tailwindcss(),
+        vue(),
+        inertia(),
+    ],
+    server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
+    },
+});
